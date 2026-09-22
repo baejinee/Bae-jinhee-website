@@ -1,381 +1,580 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bae Jin Hee | Artist Portfolio</title>
-  <meta name="description" content="배진희 작가 포트폴리오 – 유리, 빛, 공간을 통한 감각적 이미지의 탐구" />
-  <meta name="keywords" content="배진희, Bae Jin Hee, artist, portfolio, glass art, stained glass, visual artist" />
-  <meta property="og:title" content="Bae Jin Hee | Artist Portfolio" />
-  <meta property="og:description" content="유리, 빛, 공간을 통한 감각적 이미지의 탐구" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://baejinhee.netlify.app" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bae Jin Hee</title>
+<meta name="description" content="배진희 Bae Jin Hee — 유리, 빛, 공간을 통한 감각적 이미지의 탐구">
+<meta name="theme-color" content="#0A0A0C">
+<meta property="og:title" content="Bae Jin Hee">
+<meta property="og:description" content="유리, 빛, 공간을 통한 감각적 이미지의 탐구">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-lang="ko">
 
-<!-- Loading -->
-<div id="loading-screen">
-  <div class="loading-pulse"></div>
-</div>
+<div class="lumen glow" id="lumenGlow" aria-hidden="true"></div>
+<div class="lumen cast" id="lumenCast" aria-hidden="true"></div>
+<div class="lumen-core" id="lumenCore" aria-hidden="true"></div>
 
-<!-- HEADER -->
-<header id="header">
-  <div class="logo" id="logo">BAE JIN HEE</div>
-  <nav>
-    <a href="#about" data-ko="소개" data-en="About" class="nav-link">소개</a>
-    <a href="#works" data-ko="작품" data-en="Works" class="nav-link">작품</a>
-    <a href="#cv" data-ko="이력" data-en="CV" class="nav-link">이력</a>
-    <a href="#contact" data-ko="연락처" data-en="Contact" class="nav-link">연락처</a>
-    <button id="langToggle" class="lang-btn">EN</button>
-  </nav>
-  <div class="menu-toggle" id="menuToggle">
-    <span></span><span></span><span></span>
+<header class="bar" id="bar">
+  <div class="wrap bar-in">
+    <a class="bar-name" href="#top">BAE JIN HEE</a>
+    <nav class="bar-nav" id="barNav"></nav>
+    <div class="langsw">
+      <button type="button" data-set="ko">KO</button><i>/</i><button type="button" data-set="en">EN</button>
+    </div>
   </div>
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about" data-ko="소개" data-en="About" class="nav-link">소개</a>
-  <a href="#works" data-ko="작품" data-en="Works" class="nav-link">작품</a>
-  <a href="#cv" data-ko="이력" data-en="CV" class="nav-link">이력</a>
-  <a href="#contact" data-ko="연락처" data-en="Contact" class="nav-link">연락처</a>
-</div>
+<main id="top">
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-content fade-in">
-    <h1>BAE JIN HEE</h1>
-    <p class="hero-sub" data-ko="유리, 빛, 공간을 통한 감각적 이미지의 탐구" data-en="Exploring Sensory Imagery through Glass, Light, and Space">유리, 빛, 공간을 통한 감각적 이미지의 탐구</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container fade-in">
-    <h2 data-ko="소개" data-en="About">소개</h2>
-    <div class="about-layout">
-      <div class="about-image">
-        <img src="images/profile.jpg" alt="Bae Jin Hee" />
-      </div>
-      <div class="about-text">
-        <div class="lang-ko">
-          <p>배진희(b. 1996, 서울)는 서울을 기반으로 활동하는 시각예술가로, 유리와 빛을 통해 감각적 이미지를 탐구한다.</p>
-          <p>공간이 해체되는 순간에 주목하는 'Dispace' 개념에서 출발하여, '경계', '관계' 시리즈 등 유리의 모호한 물성에서 파생된 작업을 이어가고 있다.</p>
-          <p>회화에서 출발한 작업은 스테인드글라스, 설치, 가구, 공간, 건축으로 확장되며 매체 간의 경계를 넘나들고 있다.</p>
-        </div>
-        <div class="lang-en" style="display:none;">
-          <p>Bae Jin Hee (b. 1996, Seoul, Korea) is a Seoul-based visual artist who explores sensory imagery through glass and light.</p>
-          <p>Beginning with the concept of 'Dispace'—a focus on the moment spaces dissolve—she continues her practice through series such as 'Boundary' and 'Relation', derived from the ambiguous materiality of glass.</p>
-          <p>Expanding from painting, her work now encompasses stained glass, installation, furniture, spatial design, and architecture, traversing the boundaries between mediums.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WORKS -->
-<section id="works" class="section">
-  <div class="container fade-in">
-    <h2 data-ko="작품" data-en="Works">작품</h2>
-    <div class="works-filter">
-      <button class="filter-btn active" data-filter="all" data-ko="전체" data-en="All">전체</button>
-    </div>
-    <div class="works-grid" id="worksGrid"></div>
-  </div>
-</section>
-
-<!-- WORK MODAL -->
-<div class="modal" id="workModal">
-  <div class="modal-content">
-    <span class="modal-close" id="modalClose">&times;</span>
-    <div class="modal-body">
-      <div class="modal-image">
-        <img id="modalImg" src="" alt="" />
-      </div>
-      <div class="modal-info">
-        <h3 id="modalTitle"></h3>
-        <p id="modalYear" class="modal-year"></p>
-        <p id="modalMedium" class="modal-medium"></p>
-        <p id="modalSize" class="modal-size"></p>
-        <p id="modalDesc" class="modal-desc"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CV -->
-<section id="cv" class="section">
-  <div class="container fade-in">
-    <h2 data-ko="이력" data-en="CV">이력</h2>
-
-    <!-- 학력 -->
-    <div class="cv-block">
-      <h3 data-ko="학력" data-en="Education">학력</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2018–2020</span><div class="cv-content">인천가톨릭대학교 대학원 그리스도교미술학과 스테인드글라스 전공 석사 졸업</div></div>
-        <div class="cv-item"><span class="cv-year">2014–2018</span><div class="cv-content">인천가톨릭대학교 조형예술대학 회화과 학사 졸업</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2018–2020</span><div class="cv-content">M.F.A. in Christian Art (Stained Glass), Graduate School, Incheon Catholic University</div></div>
-        <div class="cv-item"><span class="cv-year">2014–2018</span><div class="cv-content">B.F.A. in Painting, Department of Fine Arts, Incheon Catholic University</div></div>
-      </div>
-    </div>
-
-    <!-- 경력 -->
-    <div class="cv-block">
-      <h3 data-ko="경력" data-en="Experience">경력</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2022–현재</span><div class="cv-content">스튜디오 제이스텔라(J.stellar) 대표</div></div>
-        <div class="cv-item"><span class="cv-year">2020–2022</span><div class="cv-content">인천가톨릭대학교 부설 스테인드글라스연구소 연구원</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">Currently</span><div class="cv-content">Director, Studio J.stellar</div></div>
-        <div class="cv-item"><span class="cv-year">Sep 2020 – Oct 2022</span><div class="cv-content">Researcher, Stained Glass Research Institute, Incheon Catholic University</div></div>
-      </div>
-    </div>
-
-    <!-- 개인전 -->
-    <div class="cv-block">
-      <h3 data-ko="개인전" data-en="Solo Exhibitions">개인전</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2024</span><div class="cv-content"><strong>《RE;lation》</strong> 공간운솔, 인천<div class="cv-note">인천문화재단 청년예술인 창작지원 선정</div></div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>《Dispace》</strong> Nomakeup Studio, 인천<div class="cv-note">인천문화재단 청년예술인 창작지원 선정</div></div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>《빛을 바치다》</strong> 갤러리1898, 서울<div class="cv-note">갤러리1898 청년 성미술 공모 선정</div></div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2024</span><div class="cv-content"><strong>RE;lation</strong>, Space Unsoll, Incheon, Oct 30 – Nov 12<div class="cv-note">Selected for the Incheon Foundation for Arts & Culture Young Artists Creation Support</div></div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>Dispace</strong>, Nomakeup Studio, Incheon, Oct 11 – Nov 30<div class="cv-note">Selected for the Incheon Foundation for Arts & Culture Young Artists Creation Support</div></div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>Offering the Light</strong>, Gallery 1898, Seoul, Jul 7 – Jul 12<div class="cv-note">Selected for Gallery 1898 Young Sacred Art Competition</div></div></div>
-      </div>
-    </div>
-
-    <!-- 단체전 -->
-    <div class="cv-block">
-      <h3 data-ko="단체전" data-en="Group Exhibitions">단체전</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2026</span><div class="cv-content"><strong>《여운의 층위》</strong> Gallery Mosoon, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2026</span><div class="cv-content"><strong>《World ARTFESTA 2026》</strong> COEX, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content"><strong>《겨자씨 닮은 용기로: 2027 서울 WYD 주제성구 묵상전》</strong> 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content"><strong>《빛을 찾아서 – stained glass를 중심으로》</strong> 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>《공동의 집에 관한 대화》</strong> 성미술 청년작가 순회전, 뽈리화랑, 수원</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>《ME, WE》</strong> 린파인아트 갤러리 특별 기획전, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>《공동의 집에 관한 대화》</strong> 성미술 청년작가 기획전, 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>《빛의 길, Chiaroscuro》</strong> 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>《Lumière, 빛, 깨달음》</strong> RIVUS 갤러리, 인천</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>《성 김대건 성당 성미술 초대 작가전》</strong> RIVUS 갤러리, 인천</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>《생명으로 치유하다》</strong> 인천가톨릭대학교 25주년 기념전, RIVUS 갤러리, 인천</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>《Lux, Ama et Labora》</strong> 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content"><strong>《비대면 시대: 공예와 디자인》</strong> 한국조형디자인협회 국제조형디자인전, 국민대학교, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content"><strong>《한국 현대유리의 진화 2020》</strong> 신세계백화점 충청점, 천안</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>《도계유리나라 1주년 기념 유리작가 초청 특별전》</strong> 도계유리나라, 삼척</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>《빛 이야기 (OUR STORY OF LIGHT)》</strong> 석사학위 청구전, RIVUS 갤러리, 인천</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>《품다》</strong> 제6회 서울가톨릭국제미술대전 수상작 전시, 인사아트센터, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>《비빔: 상상하고 만들다》</strong> 한국조형디자인협회 국제조형디자인전, 서울대학교, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>《ART ULSAN 2018 CHANGE & INNOVATION》</strong> 울산대공원, 울산</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>《구원의 빛, 십자가의 길 (Via Dolorosa)》</strong> 갤러리1898, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2017</span><div class="cv-content"><strong>《스며들듯이, 따로 또 같이, 또 다른 가치》</strong> 인천아트플랫폼, 인천</div></div>
-        <div class="cv-item"><span class="cv-year">2016</span><div class="cv-content"><strong>《아시아프 & 히든아티스트 페스티벌》</strong> DDP, 서울</div></div>
-        <div class="cv-item"><span class="cv-year">2014</span><div class="cv-content"><strong>《자연은 다음세대의 생명》</strong> 가온갤러리, 인천</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2026</span><div class="cv-content"><strong>World ARTFESTA 2026</strong>, COEX, Seoul, Jan 22 – Jan 25 (expected)</div></div>
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content"><strong>With the Courage of a Mustard Seed: Meditation Exhibition on the Theme Scripture of WYD Seoul 2027</strong>, Gallery 1898, Seoul, Jul 4 – Jul 13</div></div>
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content"><strong>In Search of Light – Focusing on Stained Glass</strong>, Gallery 1898, Seoul, Mar 28 – Apr 6</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>Young Sacred Art Artists Traveling Exhibition, A Conversation about Our Common Home</strong>, Polly Gallery, Suwon, Oct 27 – Nov 6</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>Special Curated Exhibition ME, WE</strong>, Lynnfine Art Gallery, Seoul, Jul 11 – Aug 11</div></div>
-        <div class="cv-item"><span class="cv-year">2023</span><div class="cv-content"><strong>Young Sacred Art Artists Curated Exhibition, A Conversation about Our Common Home</strong>, Gallery 1898, Seoul, Jul 12 – Jul 20</div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>The Path of Light: Chiaroscuro</strong>, Gallery 1898, Seoul, Sep 28 – Oct 4</div></div>
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content"><strong>Lumière: Light, Enlightenment</strong>, RIVUS Gallery, Incheon, Sep 16 – Sep 21</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>St. Andrew Kim Dae-geon Cathedral Invitational Exhibition of Sacred Art</strong>, RIVUS Gallery Exhibition Hall 2, Incheon, Oct 6 – Oct 20</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>25th Anniversary Exhibition of Incheon Catholic University, Healing through Life</strong>, RIVUS Gallery, Incheon, Sep 6 – Sep 26</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>Lux, Ama et Labora</strong>, Gallery 1898, Seoul, Feb 3 – Feb 9</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content"><strong>International Formative Design Exhibition, The Untact Era: Craft and Design</strong>, College of Fine Arts, Kookmin University, Seoul, Dec 4 – Dec 11</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content"><strong>Evolution in Korean Contemporary Glass 2020</strong>, Cultural Hall (5F), Shinsegae Department Store Chungcheong Branch, Cheonan, Jun 26 – Jul 12</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>Special Invitational Exhibition for the 1st Anniversary of Dogye Glass Land</strong>, Dogye Glass Land, Samcheok, May 28 – Aug 25</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>M.F.A. Degree Exhibition, Our Story of Light</strong>, RIVUS Gallery, Incheon Catholic University, Incheon, Dec 11 – Dec 18</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>Award Exhibition, Embrace, The 6th Seoul Catholic International Art Exhibition</strong>, Insa Art Center, Seoul, Dec 20 – Dec 30</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>International Formative Design Exhibition, Bibim: Imagining and Making</strong>, Art Research Complex, Seoul National University, Seoul, Oct 18 – Oct 24</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>ART ULSAN 2018: Change & Innovation</strong>, Special Exhibition Hall, Ulsan Grand Park South Gate Plaza, Aug 31 – Sep 3</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>Light of Salvation, The Way of the Cross (Via Dolorosa)</strong>, Gallery 1898, Myeong-dong, Seoul, Jan 10 – Jan 16</div></div>
-        <div class="cv-item"><span class="cv-year">2017</span><div class="cv-content"><strong>As If Soaking In: Separately, Yet Together, Another Value</strong>, Incheon Art Platform, Incheon, Dec 21 – Dec 29</div></div>
-        <div class="cv-item"><span class="cv-year">2016</span><div class="cv-content"><strong>ASYAAF & Hidden Artists Festival</strong>, Dongdaemun Design Plaza (DDP), Seoul, Jul 19 – Aug 14</div></div>
-        <div class="cv-item"><span class="cv-year">2014</span><div class="cv-content"><strong>Nature Is the Life of the Next Generation</strong>, Gaon Gallery, Incheon, Oct 10 – Oct 19</div></div>
-      </div>
-    </div>
-
-    <!-- 수상 -->
-    <div class="cv-block">
-      <h3 data-ko="수상" data-en="Awards">수상</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>성미술 청년작가 공모전 선정</strong><div class="cv-sub">개인전 《빛을 바치다》 갤러리1898, 서울</div></div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>제6회 서울가톨릭국제미술대전</strong><div class="cv-sub">입선</div></div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>한국조형디자인협회 국제학술대회</strong><div class="cv-sub">입선</div></div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>ART ULSAN 2018 CHANGE & INNOVATION</strong><div class="cv-sub">우수작가상</div></div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content"><strong>Selected Artist, Young Sacred Art Competition</strong><div class="cv-sub">Solo Exhibition Offering the Light, Gallery 1898, Seoul</div></div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content"><strong>Honorable Mention, The 6th Seoul Catholic International Art Exhibition</strong></div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>Honorable Mention, Korea Society of Formative Design International Conference</strong></div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content"><strong>Excellence Award, ART ULSAN 2018: Change & Innovation</strong></div></div>
-      </div>
-    </div>
-
-    <!-- 작품 소장 -->
-    <div class="cv-block">
-      <h3 data-ko="작품 소장" data-en="Collections">작품 소장</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content">파주 개인주택</div></div>
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content">서울 개인주택</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content">Private Residence, Paju</div></div>
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content">Private Residence, Seoul</div></div>
-      </div>
-    </div>
-
-    <!-- 프로젝트 -->
-    <div class="cv-block">
-      <h3 data-ko="프로젝트" data-en="Projects">프로젝트</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content">시흥 장곡성당 성가대석·유아방 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2024</span><div class="cv-content">영화 《청설》 조명 제작 참여</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2025</span><div class="cv-content">Participation in the design and production of stained glass for the choir loft and nursery room, Janggok Catholic Church, Siheung</div></div>
-        <div class="cv-item"><span class="cv-year">2024</span><div class="cv-content">Lighting for the film Hear Me: Our Summer</div></div>
-      </div>
-    </div>
-
-    <!-- 연구 활동 -->
-    <div class="cv-block">
-      <h3 data-ko="연구 활동" data-en="Research Activities">연구 활동</h3>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content"><strong>석사학위 논문</strong><div class="cv-sub">「복합기법 적용을 통한 현대 스테인드글라스 개념의 확장 가능성에 대한 연구」</div></div></div>
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content"><strong>학술지 논문</strong> — 한국조형디자인협회 2022 봄호 《조형디자인연구》<div class="cv-sub">「복합기법을 적용한 현대 스테인드글라스의 범위 확장 가능성에 대한 연구」</div></div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content"><strong>M.F.A. Thesis</strong><div class="cv-sub">A Study on the Possibility of Expanding the Concept of Contemporary Stained Glass through the Application of Mixed Techniques</div></div></div>
-        <div class="cv-item"><span class="cv-year-blank"></span><div class="cv-content"><strong>Academic Journal Article</strong><div class="cv-sub">A Study on the Possibility of Expanding the Scope of Contemporary Stained Glass through the Application of Mixed Techniques, Formative Design Research, Korea Society of Formative Design, Spring 2022 Issue</div></div></div>
-      </div>
-    </div>
-
-    <!-- 스테인드글라스연구소 -->
-    <div class="cv-block">
-      <h3 data-ko="스테인드글라스연구소 프로젝트" data-en="Stained Glass Research Institute Projects">스테인드글라스연구소 프로젝트</h3>
-      <p class="cv-institute-note lang-ko">인천가톨릭대학교 부설 스테인드글라스연구소</p>
-      <p class="cv-institute-note lang-en" style="display:none;">Affiliated with Incheon Catholic University</p>
-      <div class="lang-ko">
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content">전주교구 윤지충 성당 — 로비창 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content">수원교구 상신성당 — 로비창 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content">인천 박문중학교 — 시청각실 스테인드글라스 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content">인천교구 해안성당 — 입구 반원창 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content">인천가톨릭대학교 성 김대건 성당 — 로비창 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content">인천교구 구월동성당 — 카페 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content">수원교구 은행동성당 — 유아방 스테인드글라스 디자인 및 제작</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content">청주교구 새터성당 — 입구 원형창·카페 스테인드글라스 디자인 및 제작</div></div>
-      </div>
-      <div class="lang-en" style="display:none;">
-        <div class="cv-item"><span class="cv-year">2022</span><div class="cv-content">Participation in the design and production of lobby stained glass windows, Yoon Ji-chung Catholic Church, Jeonju Diocese</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content">Participation in the design and production of lobby stained glass windows, Sangsin Catholic Church, Suwon Diocese</div></div>
-        <div class="cv-item"><span class="cv-year">2021</span><div class="cv-content">Participation in the production of stained glass for the audiovisual room, Parkmun Middle School, Incheon</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content">Participation in the design and production of semicircular entrance stained glass windows, Haean Catholic Church, Incheon Diocese</div></div>
-        <div class="cv-item"><span class="cv-year">2020</span><div class="cv-content">Participation in the design and production of lobby stained glass windows, St. Andrew Kim Dae-geon Catholic Church, Incheon Catholic University</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content">Participation in the design and production of café stained glass, Guwol-dong Catholic Church, Incheon Diocese</div></div>
-        <div class="cv-item"><span class="cv-year">2019</span><div class="cv-content">Participation in the design and production of nursery room stained glass, Eunhaeng-dong Catholic Church, Suwon Diocese</div></div>
-        <div class="cv-item"><span class="cv-year">2018</span><div class="cv-content">Participation in the design and production of circular entrance windows and café stained glass, Saeteo Catholic Church, Cheongju Diocese</div></div>
-      </div>
-    </div>
-
-    <!-- 포트폴리오 PDF -->
-    <div class="cv-block cv-download-block">
-      <h3 data-ko="포트폴리오 다운로드" data-en="Portfolio Download">포트폴리오 다운로드</h3>
-      <div class="pdf-download-area">
-        <div class="pdf-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/>
-          </svg>
-        </div>
-        <div class="pdf-info">
-          <p class="pdf-filename">Bae_JinHee_Portfolio.pdf</p>
-          <p class="pdf-size lang-ko">작가 포트폴리오 PDF</p>
-          <p class="pdf-size lang-en" style="display:none;">Artist Portfolio PDF</p>
-        </div>
-        <a href="files/Bae jinhee_portfolio_-.pdf" download class="pdf-btn" data-ko="다운로드" data-en="Download">다운로드</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container fade-in">
-    <h2 data-ko="연락처" data-en="Contact">연락처</h2>
-    <div class="contact-layout">
-      <div class="contact-info-side">
-        <div class="contact-card">
-          <h4 data-ko="이메일" data-en="Email">이메일</h4>
-          <a href="mailto:harymamee0228@gmail.com">harymamee0228@gmail.com</a>
-        </div>
-        <div class="contact-card">
-          <h4>Instagram</h4>
-          <a href="https://instagram.com/b.ae_jinhee" target="_blank" rel="noopener">@b.ae_jinhee</a>
-        </div>
-        <div class="contact-desc lang-ko">
-          <p>작품 문의, 전시 제안 및 협업 관련 메시지를 보내주시면<br />확인 후 회신 드리겠습니다.</p>
-        </div>
-        <div class="contact-desc lang-en" style="display:none;">
-          <p>For inquiries about works, exhibition proposals,<br />or collaborations, please send a message.</p>
-        </div>
-      </div>
-      <div class="contact-form-side">
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="contactName" class="lang-ko">이름</label>
-            <label for="contactName" class="lang-en" style="display:none;">Name</label>
-            <input type="text" id="contactName" required autocomplete="name" />
+  <!-- 첫 화면 — 언어 선택 -->
+  <section class="enter">
+    <div class="wrap enter-in">
+      <div class="enter-mid">
+        <div>
+          <h1 class="enter-name" id="enterName"></h1>
+          <div class="gate" id="gate">
+            <button type="button" data-set="ko">한국어</button>
+            <s>/</s>
+            <button type="button" data-set="en">English</button>
           </div>
-          <div class="form-group">
-            <label for="contactEmail" class="lang-ko">이메일</label>
-            <label for="contactEmail" class="lang-en" style="display:none;">Email</label>
-            <input type="email" id="contactEmail" required autocomplete="email" />
+          <p class="enter-line" id="enterLine"></p>
+        </div>
+      </div>
+      <div class="enter-foot">
+        <div class="lab" id="enterMeta"></div>
+        <a class="scroll-cue lab" href="#about" id="enterCue"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소개 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="aboutH"></h2><span class="lab" id="aboutMeta"></span></div>
+      <div class="about-grid">
+        <figure class="about-portrait" id="portrait" style="margin:0"></figure>
+        <div id="aboutText"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 작품 -->
+  <section id="works">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="worksH"></h2><span class="lab" id="worksMeta"></span></div>
+      <nav class="series-nav" id="seriesNav"></nav>
+      <div id="seriesWrap"></div>
+    </div>
+  </section>
+
+  <!-- 건축 공간 -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="projH"></h2><span class="lab" id="projMeta"></span></div>
+      <p class="series-note" id="projNote"></p>
+      <div class="proj-grid" id="projGrid"></div>
+    </div>
+  </section>
+
+  <!-- 협업 -->
+  <section id="collab">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="colH"></h2><span class="lab" id="colMeta"></span></div>
+      <p class="series-note" id="colNote"></p>
+      <div class="collab-grid" id="colGrid"></div>
+    </div>
+  </section>
+
+  <!-- 이력 -->
+  <section id="cv">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="cvH"></h2><span class="lab" id="cvBorn"></span></div>
+      <div class="cv" id="cvBody"></div>
+    </div>
+  </section>
+
+  <!-- 연락처 -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="contactH"></h2><span class="lab"></span></div>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-intro" id="cIntro"></p>
+          <div class="contact-list" id="cList"></div>
+        </div>
+
+        <form class="form" id="mailForm" novalidate>
+          <div class="two">
+            <div class="field"><label for="f-name" id="lb-name"></label>
+              <input id="f-name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email" id="lb-email"></label>
+              <input id="f-email" type="email" autocomplete="email" required></div>
           </div>
-          <div class="form-group">
-            <label for="contactSubject" class="lang-ko">제목</label>
-            <label for="contactSubject" class="lang-en" style="display:none;">Subject</label>
-            <input type="text" id="contactSubject" />
-          </div>
-          <div class="form-group">
-            <label for="contactMessage" class="lang-ko">메시지</label>
-            <label for="contactMessage" class="lang-en" style="display:none;">Message</label>
-            <textarea id="contactMessage" rows="6" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn" data-ko="보내기" data-en="Send">보내기</button>
+          <div class="field"><label for="f-subject" id="lb-subject"></label>
+            <input id="f-subject" type="text"></div>
+          <div class="field"><label for="f-message" id="lb-message"></label>
+            <textarea id="f-message" required></textarea></div>
+          <button class="form-send" type="submit" id="sendBtn"></button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
         </form>
-        <div id="formSuccess" class="form-success" style="display:none;">
-          <div class="success-icon">✓</div>
-          <p class="lang-ko">메시지가 성공적으로 전송되었습니다.</p>
-          <p class="lang-en" style="display:none;">Your message has been sent successfully.</p>
-        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Bae Jin Hee. All rights reserved.</p>
-</footer>
+</main>
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
-<script src="script.js"></script>
+<footer class="foot-outer"><div class="wrap foot lab" id="foot"></div></footer>
+
+<!-- 상세 보기 -->
+<div class="view" id="view" role="dialog" aria-modal="true" aria-label="Work detail">
+  <span class="view-count" id="viewCount"></span>
+  <button class="view-x" id="viewX">CLOSE</button>
+  <button class="view-nav view-prev" id="viewPrev" aria-label="prev">←</button>
+  <button class="view-nav view-next" id="viewNext" aria-label="next">→</button>
+  <div class="view-in" id="viewIn"></div>
+</div>
+
+<noscript><div class="wrap" style="padding:80px 0">이 페이지는 자바스크립트로 내용을 불러옵니다. / Please enable JavaScript.</div></noscript>
+
+<script src="data.js"></script>
+<script>
+/* ==========================================================================
+   화면을 그리고 빛을 다루는 부분입니다. 수정할 일은 거의 없습니다.
+   내용을 바꾸시려면 data.js 를 여세요. (또는 편집기.html)
+   ========================================================================== */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── 화면에 쓰는 낱말들 (내용이 아니라 버튼·제목 같은 것) ────────── */
+  var UI = {
+    ko: { about:'소개', works:'작품', projects:'건축 공간', collab:'협업',
+          cv:'이력', contact:'연락처', views:'전시 전경', scroll:'아래로',
+          name:'이름', email:'이메일', subject:'제목', message:'메시지',
+          send:'보내기', more:'장 더 보기',
+          fill:'이름, 이메일, 메시지를 채워 주세요.',
+          sending:'보내는 중…',
+          sent:'메시지가 전송되었습니다. 확인 후 회신 드리겠습니다.',
+          failed:'전송에 실패했습니다. 아래 주소로 직접 보내주세요 — ',
+          mailapp:'메일 앱이 열립니다.',
+          studio:'스튜디오', pdf:'포트폴리오 내려받기', top:'맨 위로',
+          inquiry:'문의' },
+    en: { about:'About', works:'Works', projects:'Architectural Space', collab:'Collaborations',
+          cv:'CV', contact:'Contact', views:'Installation views', scroll:'Scroll',
+          name:'Name', email:'Email', subject:'Subject', message:'Message',
+          send:'Send', more:' more',
+          fill:'Please fill in name, email, and message.',
+          sending:'Sending…',
+          sent:'Your message has been sent.',
+          failed:'Sending failed. Please write directly to — ',
+          mailapp:'Opening your mail app.',
+          studio:'Studio', pdf:'Download portfolio', top:'Top',
+          inquiry:'Inquiry' }
+  };
+
+  var L = 'ko';                       // 현재 언어
+  var T = UI.ko;
+
+  /* ko/en 을 가진 값에서 현재 언어를 꺼냅니다. 비어 있으면 다른 쪽으로 대신합니다. */
+  function t(o) {
+    if (o == null) return '';
+    if (typeof o === 'string') return o;
+    return (o[L] && String(o[L]).trim()) ? o[L] : (o[L === 'ko' ? 'en' : 'ko'] || '');
+  }
+  /* 크기 — '가변크기' 는 영문에서 'dimensions variable' 로 */
+  function size(s) {
+    if (!s) return '';
+    return L === 'en' ? String(s).replace(/가변\s*크기/g, 'dimensions variable') : s;
+  }
+  /* 작품 제목 — 국문에서는 국문 제목이 있으면 그것을, 없으면 영문 제목을 */
+  function title(w) {
+    if (L === 'ko' && w.ko && w.ko.trim()) return w.ko;
+    return w.title || w.ko || '';
+  }
+
+  function placeholder(label) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">' +
+      '<rect width="100%" height="100%" fill="#DCDCD8"/>' +
+      '<text x="400" y="408" text-anchor="middle" font-family="Pretendard, sans-serif" ' +
+      'font-size="22" letter-spacing="4" fill="#8D8E88">' + esc(label) + '</text></svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  var FB = placeholder('IMAGE');
+
+  function imgTag(src, alt, extra) {
+    return '<img src="' + esc(src || FB) + '" alt="' + esc(alt) + '" ' +
+           (extra == null ? 'loading="lazy"' : extra) +
+           ' draggable="false" onerror="this.onerror=null;this.src=\'' + FB + '\'">' +
+           '<span class="shield"></span>';
+  }
+  function shots(o) {                 // 옛 방식(image:'...') 도 받아줍니다
+    if (o.images && o.images.length) return o.images;
+    return o.image ? [o.image] : [];
+  }
+
+  var ITEMS = [];                     // 상세 보기 목록
+  function add(o) { ITEMS.push(o); return ITEMS.length - 1; }
+
+  /* ══ 전체 그리기 ═══════════════════════════════════════════════════ */
+  function draw() {
+    T = UI[L];
+    ITEMS = [];
+    document.body.setAttribute('data-lang', L);
+    document.documentElement.lang = L;
+
+    /* 상단 메뉴 */
+    $('barNav').innerHTML =
+      ['about','works','projects','collab','cv','contact']
+        .filter(function (k) {
+          if (k === 'collab') return SITE.collab && SITE.collab.items && SITE.collab.items.length;
+          return true;
+        })
+        .map(function (k) { return '<a href="#' + k + '">' + esc(T[k]) + '</a>'; }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('.langsw button'), function (b) {
+      b.classList.toggle('on', b.getAttribute('data-set') === L);
+    });
+
+    /* 첫 화면 */
+    $('enterName').textContent = SITE.entrance.name;
+    $('enterLine').textContent = t(SITE.entrance.line);
+    $('enterMeta').textContent = SITE.meta.span + '   ·   ' + t(SITE.meta.media);
+    $('enterCue').innerHTML = esc(T.scroll) + ' &nbsp;<i></i>';
+
+    /* 소개 */
+    var A = SITE.about;
+    $('aboutH').textContent = t(A.heading);
+    $('aboutMeta').textContent = t(SITE.meta.role);
+    $('portrait').innerHTML = imgTag(A.portrait, t(SITE.meta.name));
+    $('aboutText').innerHTML = A.paragraphs.map(function (p) {
+      return '<p class="about-p">' + esc(t(p)) + '</p>';
+    }).join('');
+
+    /* 작품 */
+    $('worksH').textContent = T.works;
+    $('worksMeta').textContent = SITE.meta.span;
+    $('seriesNav').innerHTML = SITE.series.map(function (s) {
+      return '<a href="#s-' + esc(s.id) + '">' + esc(t(s)) + '</a>';
+    }).join('');
+
+    $('seriesWrap').innerHTML = SITE.series.map(function (s) {
+      var works = s.works.map(function (w) {
+        var pics = shots(w);
+        var i = add({
+          head: title(w), images: pics,
+          line: [w.medium, size(w.size), w.year].filter(Boolean).join(', ')
+        });
+        return '<button class="thumb" data-i="' + i + '">' +
+          '<span class="thumb-img">' + imgTag(pics[0], title(w)) +
+            (pics.length > 1 ? '<span class="thumb-n">+' + (pics.length - 1) + '</span>' : '') +
+          '</span>' +
+          '<span class="thumb-cap">' +
+            '<span class="thumb-t">' + esc(title(w)) + '</span>' +
+            '<span class="thumb-y">' + esc(w.year) + '</span>' +
+          '</span>' +
+        '</button>';
+      }).join('');
+
+      var views = '';
+      if (s.views && s.views.length) {
+        views = '<div class="views">' +
+          '<div class="views-h"><span class="lab">' + esc(T.views) + '</span></div>' +
+          '<div class="views-grid">' + s.views.map(function (v) {
+            var cap = t(v.caption);
+            var i = add({ head: t(s), images: [v.image], line: cap });
+            return '<button class="viewshot" data-i="' + i + '">' +
+              '<span class="viewshot-img">' + imgTag(v.image, cap) + '</span>' +
+              '<span class="c">' + esc(cap) + '</span>' +
+            '</button>';
+          }).join('') + '</div></div>';
+      }
+
+      return '<div class="series" id="s-' + esc(s.id) + '">' +
+        '<div class="series-head"><h3>' + esc(t(s)) + '</h3>' +
+          '<span class="lab">' + esc(s.years) + '</span></div>' +
+        '<p class="series-note">' + esc(t(s.note)) + '</p>' +
+        '<div class="thumbs">' + works + '</div>' + views +
+      '</div>';
+    }).join('');
+
+    /* 건축 공간 · 협업 */
+    cards(SITE.projects, 'proj', 'projects');
+    cards(SITE.collab, 'col', 'collab', 'collab');
+
+    /* 이력 */
+    var B = SITE.bio;
+    $('cvH').textContent = t(B.heading);
+    $('cvBorn').textContent = t(B.born);
+    $('cvBody').innerHTML = B.cv.map(function (b) {
+      return '<div class="cv-block">' +
+        '<div class="cv-h"><span class="lab">' + esc(t(b.heading)) + '</span></div>' +
+        b.items.map(function (it) {
+          var body = esc(t(it));
+          if (it.url) {
+            body = '<a class="ext" href="' + esc(it.url) + '" target="_blank" rel="noopener">' + body + '</a>';
+          }
+          if (it.sub && t(it.sub)) body += '<span class="sub">' + esc(t(it.sub)) + '</span>';
+          return '<div class="cv-row"><span class="cv-y">' + esc(it.year) + '</span>' +
+                 '<span class="cv-t">' + body + '</span></div>';
+        }).join('') + '</div>';
+    }).join('');
+
+    /* 연락처 */
+    var c = SITE.contact;
+    $('contactH').textContent = T.contact;
+    $('cIntro').textContent = t(c.intro);
+    var rows = [];
+    if (c.email) rows.push('<a href="mailto:' + esc(c.email) + '"><span>' + esc(c.email) + '</span><span class="lab">Email</span></a>');
+    if (c.instagram) rows.push('<a href="https://instagram.com/' + esc(c.instagram) + '" target="_blank" rel="noopener"><span>@' + esc(c.instagram) + '</span><span class="lab">Instagram</span></a>');
+    if (c.phone) rows.push('<a href="tel:' + esc(c.phone.replace(/[^+\d]/g, '')) + '"><span>' + esc(c.phone) + '</span><span class="lab">Tel</span></a>');
+    if (c.portfolio) rows.push('<a href="' + esc(c.portfolio) + '" download><span>' + esc(T.pdf) + '</span><span class="lab">PDF</span></a>');
+    rows.push('<span><span>' + esc(t(SITE.meta.studio)) + '</span><span class="lab">' + esc(T.studio) + '</span></span>');
+    $('cList').innerHTML = rows.join('');
+
+    $('lb-name').textContent = T.name;
+    $('lb-email').textContent = T.email;
+    $('lb-subject').textContent = T.subject;
+    $('lb-message').textContent = T.message;
+    $('sendBtn').textContent = T.send;
+
+    $('foot').innerHTML =
+      '<span>© ' + new Date().getFullYear() + ' ' + esc(SITE.meta.name.en) + '</span>' +
+      '<a href="#top">' + esc(T.top) + '</a>';
+
+    watchRise();
+  }
+
+  /* 건축 공간 · 협업 — 같은 모양의 카드 구역 */
+  function cards(D, pre, secId, cls) {
+    cls = cls || pre;
+    var sec = $(secId);
+    if (!D || !D.items || !D.items.length) { if (sec) sec.style.display = 'none'; return; }
+    if (sec) sec.style.display = '';
+    $(pre + 'H').textContent = t(D.heading);
+    $(pre + 'Meta').textContent = D.items.length + '';
+    $(pre + 'Note').textContent = t(D.note);
+    $(pre + 'Grid').innerHTML = D.items.map(function (w) {
+      var pics = shots(w);
+      var place = t(w.place);
+      var i = add({ head: title(w), images: pics,
+                    line: [place, w.year].filter(Boolean).join(', ') });
+      return '<button class="' + cls + '" data-i="' + i + '">' +
+        '<span class="' + cls + '-img">' + imgTag(pics[0], title(w)) +
+          (pics.length > 1 ? '<span class="thumb-n">+' + (pics.length - 1) + '</span>' : '') + '</span>' +
+        '<span class="' + cls + '-cap">' +
+          '<span class="' + cls + '-t">' + esc(title(w)) +
+            '<span class="y">' + esc(w.year) + '</span></span>' +
+          '<span class="' + cls + '-p">' + esc(place) + '</span>' +
+        '</span>' +
+      '</button>';
+    }).join('');
+  }
+
+  /* 스크롤하면 하나씩 떠오릅니다 */
+  var io = null;
+  function watchRise() {
+    var rise = document.querySelectorAll('.thumb, .proj, .collab');
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(rise, function (t) { t.classList.add('is-in'); });
+      return;
+    }
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
+    Array.prototype.forEach.call(rise, function (t) { io.observe(t); });
+  }
+
+  /* ══ 언어 고르기 ═══════════════════════════════════════════════════ */
+  function reveal() {
+    $('gate').classList.add('is-gone');
+    $('enterLine').classList.add('is-in');
+    $('enterCue').classList.add('is-in');
+  }
+  function setLang(v, first) {
+    L = (v === 'en') ? 'en' : 'ko';
+    try { localStorage.setItem('bjh-lang', L); } catch (e) {}
+    draw();
+    if (!first) reveal();
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-set]');
+    if (b) { setLang(b.getAttribute('data-set')); }
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('bjh-lang'); } catch (e) {}
+  L = (saved === 'en') ? 'en' : 'ko';
+  draw();
+  if (saved) { reveal(); }             // 전에 고른 적이 있으면 바로 넘어갑니다
+
+  /* ══ 메일 보내기 ═══════════════════════════════════════════════════ */
+  var form = $('mailForm'), noteEl = $('formNote'), btn = $('sendBtn');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var c = SITE.contact;
+    var d = { name: $('f-name').value.trim(), email: $('f-email').value.trim(),
+              subject: $('f-subject').value.trim(), message: $('f-message').value.trim() };
+    if (!d.name || !d.email || !d.message) { noteEl.textContent = T.fill; return; }
+    var subject = d.subject || ('[' + T.inquiry + '] ' + d.name);
+    if (c.formEndpoint) {
+      btn.disabled = true; noteEl.textContent = T.sending;
+      fetch(c.formEndpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: d.name, email: d.email, _subject: subject, message: d.message })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('failed');
+        form.reset(); noteEl.textContent = T.sent;
+      }).catch(function () {
+        noteEl.textContent = T.failed + c.email;
+      }).then(function () { btn.disabled = false; });
+    } else {
+      location.href = 'mailto:' + c.email + '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(d.message + '\n\n—\n' + d.name + ' · ' + d.email);
+      noteEl.textContent = T.mailapp;
+    }
+  });
+
+  /* ══ 스크롤에 따라 빛이 들어옵니다 ═════════════════════════════════ */
+  var root = document.documentElement, cs = getComputedStyle(root);
+  function rgb(n) {
+    var h = cs.getPropertyValue(n).trim().replace('#', '');
+    return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+  }
+  var PAL = ['bg', 'ink', 'soft', 'mute'].map(function (k) {
+    return { key: k, a: rgb('--night-' + k), b: rgb('--day-' + k) };
+  });
+  var glow = $('lumenGlow'), cast = $('lumenCast'), core = $('lumenCore'), bar = $('bar');
+  var touch = !matchMedia('(hover: hover)').matches;
+
+  /* 빛이 차오르는 거리. 손가락으로 넘기면 한 번에 훅 지나가 버리므로
+     모바일에서는 더 길게 잡습니다. */
+  var SPAN = touch ? 2.4 : 1.5;
+  var mix = 0, aim = 0, painted = -1;
+
+  function paintColors(e) {
+    if (Math.abs(e - painted) < 0.003) return;
+    painted = e;
+    PAL.forEach(function (col) {
+      var v = col.a.map(function (n, i) { return Math.round(n + (col.b[i] - n) * e); });
+      root.style.setProperty('--' + col.key, 'rgb(' + v.join(',') + ')');
+    });
+  }
+
+  /* 커서 — 유리를 통과한 빛 하나가 끝까지 따라옵니다 */
+  var cx = 0, cy = 0, tx = 0, ty = 0, want = 0, here = 0, seen = false;
+  var kx = 0, ky = 0;                 // 빛의 중심 (커서에 더 가깝게 붙습니다)
+  if (!reduced && !touch) {
+    document.documentElement.classList.add('has-lumen');
+    tx = cx = kx = innerWidth / 2; ty = cy = ky = innerHeight / 2;
+    addEventListener('pointermove', function (e) {
+      tx = e.clientX; ty = e.clientY;
+      if (!seen) { seen = true; cx = tx; cy = ty; }
+      want = 1;
+    }, { passive: true });
+    document.addEventListener('mouseleave', function () { want = 0; });
+  }
+
+  /* 한 개의 루프가 빛과 커서를 모두 맡습니다.
+     iOS 는 관성 스크롤 도중 scroll 이벤트를 띄엄띄엄 주기 때문에
+     스크롤 위치를 매 프레임 직접 읽습니다. */
+  (function loop() {
+    var h = window.innerHeight;
+    var p = Math.min(1, Math.max(0, window.scrollY / (h * SPAN)));
+    aim = p * p * (3 - 2 * p);
+    mix += (aim - mix) * 0.12;
+    if (Math.abs(aim - mix) < 0.002) mix = aim;
+    paintColors(mix);
+    bar.classList.toggle('is-on', window.scrollY > h * 0.7);
+
+    if (!reduced && !touch) {
+      cx += (tx - cx) * 0.11; cy += (ty - cy) * 0.11;   // 번지는 빛 — 살짝 늦게
+      kx += (tx - kx) * 0.38; ky += (ty - ky) * 0.38;   // 빛의 중심 — 바짝 붙어서
+      here += (want - here) * 0.08;
+      var m = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
+      /* 밝아진 뒤에도 번지는 빛을 조금 남겨 두면 계속 '빛'으로 읽힙니다 */
+      glow.style.transform = m; glow.style.opacity = (here * (1 - mix * 0.72)).toFixed(3);
+      cast.style.transform = m; cast.style.opacity = (here * mix).toFixed(3);
+      core.style.transform = 'translate3d(' + kx.toFixed(1) + 'px,' + ky.toFixed(1) + 'px,0)';
+      core.style.opacity = here.toFixed(3);
+    }
+    requestAnimationFrame(loop);
+  })();
+
+  /* ══ 상세 보기 ═════════════════════════════════════════════════════ */
+  var view = $('view'), viewIn = $('viewIn'), vCount = $('viewCount'), at = 0;
+
+  function render() {
+    var w = ITEMS[at];
+    var pics = w.images.length ? w.images : [FB];
+    viewIn.innerHTML =
+      '<div class="view-frame">' + imgTag(pics[0], w.head, '') + '</div>' +
+      '<div class="view-cap">' +
+        '<span class="t">' + esc(w.head) + '</span>' +
+        '<span class="m">' + esc(w.line) + ' &nbsp;·&nbsp; © Bae Jin Hee</span>' +
+      '</div>' +
+      (pics.length > 1
+        ? '<div class="view-hint">' + (pics.length - 1) + ' ' + esc(T.more) + '</div>' +
+          '<div class="view-more">' + pics.slice(1).map(function (p) {
+              return '<figure>' + imgTag(p, w.head) + '</figure>';
+            }).join('') + '</div>'
+        : '');
+    vCount.textContent = pad(at + 1) + ' / ' + pad(ITEMS.length);
+    view.scrollTop = 0;
+  }
+  function openAt(i) {
+    at = i; render();
+    view.classList.add('is-open'); document.body.classList.add('is-locked');
+  }
+  function step(d) { at = (at + d + ITEMS.length) % ITEMS.length; render(); }
+  function close() { view.classList.remove('is-open'); document.body.classList.remove('is-locked'); }
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest) return;
+    var b = e.target.closest('.thumb, .viewshot, .proj, .collab');
+    if (b) { openAt(+b.getAttribute('data-i')); return; }
+    if (e.target === view || e.target === viewIn) close();
+  });
+  $('viewX').addEventListener('click', close);
+  $('viewPrev').addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+  $('viewNext').addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+  addEventListener('keydown', function (e) {
+    if (!view.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+
+  /* ══ 이미지 보호 ═══════════════════════════════════════════════════ */
+  /* 완벽한 차단은 불가능하지만, 손쉬운 저장·복사는 막습니다. */
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.closest('.thumb-img, .viewshot-img, .proj-img, .collab-img, .view-frame, .view-more, .about-portrait')) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (k === 's' || k === 'u' || k === 'p')) e.preventDefault();
+  });
+})();
+</script>
 </body>
 </html>
