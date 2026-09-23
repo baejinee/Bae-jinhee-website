@@ -169,7 +169,9 @@
           sending:'보내는 중…',
           sent:'메시지가 전송되었습니다. 확인 후 회신 드리겠습니다.',
           failed:'전송에 실패했습니다. 아래 주소로 직접 보내주세요 — ',
-          mailapp:'메일 앱이 열립니다.',
+          mailapp:'메일 앱이 열렸다면 그대로 보내주세요.',
+          mailapp2:'열리지 않았다면 아래 주소로 직접 보내주시면 됩니다.',
+          copyMail:'주소 복사', copyText:'내용 복사', copied:'복사했습니다',
           studio:'스튜디오', pdf:'포트폴리오 내려받기', top:'맨 위로',
           inquiry:'문의' },
     en: { about:'About', works:'Works', projects:'Architectural Space', collab:'Collaborations',
@@ -180,7 +182,9 @@
           sending:'Sending…',
           sent:'Your message has been sent.',
           failed:'Sending failed. Please write directly to — ',
-          mailapp:'Opening your mail app.',
+          mailapp:'If your mail app opened, just press send there.',
+          mailapp2:'If nothing opened, please write to the address below.',
+          copyMail:'Copy address', copyText:'Copy message', copied:'Copied',
           studio:'Studio', pdf:'Download portfolio', top:'Top',
           inquiry:'Inquiry' }
   };
@@ -444,11 +448,55 @@
         noteEl.textContent = T.failed + c.email;
       }).then(function () { btn.disabled = false; });
     } else {
-      location.href = 'mailto:' + c.email + '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(d.message + '\n\n—\n' + d.name + ' · ' + d.email);
-      noteEl.textContent = T.mailapp;
+      /* 메일 앱이 없거나 열리지 않는 기기가 많습니다.
+         그럴 때도 막다른 길이 되지 않게, 주소와 «복사» 를 함께 보여줍니다. */
+      var body = d.message + '\n\n—\n' + d.name + ' · ' + d.email;
+      try {
+        var a = document.createElement('a');
+        a.href = 'mailto:' + c.email + '?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(body);
+        a.style.display = 'none';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      } catch (err) { /* 무시하고 아래 안내를 보여줍니다 */ }
+      showFallback(c.email, subject, body);
     }
   });
+
+  /* 메일 앱이 안 열렸을 때를 위한 안내 */
+  function showFallback(to, subject, body) {
+    noteEl.innerHTML = '';
+    var p = document.createElement('div'); p.className = 'fb';
+    var l1 = document.createElement('p'); l1.className = 'fb-l';
+    l1.textContent = T.mailapp;
+    var l2 = document.createElement('p'); l2.className = 'fb-l fb-dim';
+    l2.textContent = T.mailapp2;
+    var row = document.createElement('div'); row.className = 'fb-row';
+    var addr = document.createElement('span'); addr.className = 'fb-addr'; addr.textContent = to;
+    var cp = document.createElement('button'); cp.type = 'button'; cp.className = 'fb-btn';
+    cp.textContent = T.copyMail;
+    cp.onclick = function () { copy(to, cp, T.copied); };
+    var cp2 = document.createElement('button'); cp2.type = 'button'; cp2.className = 'fb-btn';
+    cp2.textContent = T.copyText;
+    cp2.onclick = function () { copy(subject + '\n\n' + body, cp2, T.copied); };
+    row.appendChild(addr); row.appendChild(cp); row.appendChild(cp2);
+    p.appendChild(l1); p.appendChild(l2); p.appendChild(row);
+    noteEl.appendChild(p);
+  }
+
+  function copy(text, el, done) {
+    var was = el.textContent;
+    function ok() { el.textContent = done; setTimeout(function () { el.textContent = was; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, fb);
+    } else fb();
+    function fb() {
+      var t = document.createElement('textarea');
+      t.value = text; t.style.cssText = 'position:fixed;opacity:0;left:0;top:0';
+      document.body.appendChild(t); t.focus(); t.select();
+      try { document.execCommand('copy'); ok(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+  }
 
   /* ══ 스크롤에 따라 빛이 들어옵니다 ═════════════════════════════════ */
   var root = document.documentElement, cs = getComputedStyle(root);

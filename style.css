@@ -581,3 +581,23 @@ body.is-locked{ overflow:hidden; }
     opacity:1; transform:none; filter:none;
   }
 }
+
+/* ── 메일 앱이 열리지 않았을 때의 안내 ──────────────────────────────── */
+.fb{ margin-top:4px; }
+.fb-l{ margin:0 0 3px; font-size:13px; line-height:1.7; color:var(--soft); }
+.fb-l.fb-dim{ color:var(--mute); }
+.fb-row{
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px;
+  margin-top:9px; padding-top:10px; border-top:1px solid var(--hair);
+}
+.fb-addr{
+  font-family:var(--lat); font-size:13.5px; color:var(--ink);
+  letter-spacing:.01em; margin-right:2px; word-break:break-all;
+}
+.fb-btn{
+  border:1px solid var(--line); background:transparent; color:var(--soft);
+  font:inherit; font-size:12px; letter-spacing:.02em;
+  padding:5px 11px; border-radius:999px; cursor:pointer;
+  transition:border-color .2s ease, color .2s ease;
+}
+.fb-btn:hover{ border-color:var(--ink); color:var(--ink); }
