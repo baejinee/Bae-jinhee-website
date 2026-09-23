@@ -296,7 +296,7 @@ const SITE = {
           "size": "10.9 × 10.5 cm",
           "year": "2021",
           "images": [
-            "images/meditation-pate-de-verre.webp"
+            "images/meditation-pate-de-verre.jpg"
           ]
         },
         {
@@ -697,7 +697,6 @@ const SITE = {
           "images/collab-souvenir-production-b.jpg",
           "images/collab-souvenir-production-c.jpg",
           "images/collab-souvenir-production-d.jpg",
-          "images/collab-souvenir-production-e.jpg",
           "images/collab-souvenir-production-f.jpg",
           "images/collab-souvenir-production-g.jpg"
         ]
@@ -715,7 +714,8 @@ const SITE = {
           "images/collab-collaboration-art-work-b.jpg",
           "images/collab-collaboration-art-work-c.jpg",
           "images/collab-collaboration-art-work-d.jpg",
-          "images/collab-collaboration-art-work-e.jpg"
+          "images/collab-collaboration-art-work-e.jpg",
+          "images/collab-collaboration-art-work-f.jpg"
         ]
       }
     ]

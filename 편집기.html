@@ -81,28 +81,28 @@ section{margin-bottom:34px;scroll-margin-top:112px}
 
 /* ── 사진 타일 ──────────────────────────────────────────────── */
 .strip{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-start}
-.tile{position:relative;width:104px;border-radius:9px;overflow:hidden;
+.tile{position:relative;width:152px;border-radius:9px;overflow:hidden;
   border:1px solid var(--line);background:#F2F2EE;cursor:grab}
 .tile.drag{opacity:.4}
 .tile.over{outline:2px solid var(--accent);outline-offset:1px}
-.tile img{display:block;width:100%;height:104px;object-fit:contain;background:#F2F2EE}
-.tile .miss{display:flex;align-items:center;justify-content:center;height:104px;
+.tile img{display:block;width:100%;height:132px;object-fit:contain;background:#F2F2EE}
+.tile .miss{display:flex;align-items:center;justify-content:center;height:132px;
   font-size:11px;color:var(--mute);text-align:center;padding:6px;line-height:1.4}
 .tile .cap{font-size:10.5px;color:var(--mute);padding:4px 6px;word-break:break-all;
   border-top:1px solid var(--hair);background:#fff}
 .tile .badge{position:absolute;top:5px;left:5px;background:var(--ink);color:#fff;
   font-size:10px;padding:1px 6px;border-radius:5px}
-.tile .acts{position:absolute;inset:0 0 auto 0;display:flex;gap:3px;padding:5px;
-  justify-content:flex-end;opacity:0;transition:.15s;
-  background:linear-gradient(rgba(0,0,0,.42),transparent)}
-.tile:hover .acts{opacity:1}
-.tile .acts button{border:0;background:rgba(255,255,255,.94);border-radius:5px;
-  width:22px;height:22px;font-size:12px;cursor:pointer;line-height:1;padding:0;color:#191A1D}
-.tile .acts button:hover{background:#fff}
-.tile .acts button.x:hover{background:var(--warn);color:#fff}
-.addtile{width:104px;height:104px;border:1px dashed var(--line);border-radius:9px;
-  background:#FAFAF8;color:var(--mute);font-size:12px;cursor:pointer;line-height:1.4}
-.addtile:hover{border-color:var(--accent);color:var(--accent)}
+/* 버튼은 늘 보이게 — 마우스를 올려야 나타나면 찾기 어렵습니다 */
+.tile .acts{display:flex;gap:4px;padding:5px 6px 6px;background:#fff;
+  border-top:1px solid var(--hair)}
+.tile .acts button{flex:1;border:1px solid var(--line);background:#fff;border-radius:6px;
+  height:25px;font-size:11.5px;cursor:pointer;line-height:1;padding:0;color:#191A1D;
+  white-space:nowrap;letter-spacing:-.02em}
+.tile .acts button:hover{border-color:var(--accent);color:var(--accent)}
+.tile .acts button.x:hover{border-color:var(--warn);background:var(--warn);color:#fff}
+.addtile{width:152px;height:192px;border:1.5px dashed var(--line);border-radius:9px;
+  background:#FAFAF8;color:var(--mute);font-size:12px;cursor:pointer;line-height:1.5}
+.addtile:hover,.addtile.over{border-color:var(--accent);color:var(--accent);background:#F4F7FB}
 
 /* ── 사진 고르는 창 ─────────────────────────────────────────── */
 .modal{position:fixed;inset:0;z-index:60;display:none;background:rgba(20,20,22,.6);
@@ -119,6 +119,19 @@ section{margin-bottom:34px;scroll-margin-top:112px}
 .pick figure:hover{border-color:var(--accent)}
 .pick img{display:block;width:100%;height:100px;object-fit:contain;background:#F2F2EE}
 .pick figcaption{font-size:10.5px;color:var(--mute);padding:4px 6px;word-break:break-all;background:#fff}
+.mfind{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 13px;
+  font:inherit;font-size:14px;outline:none;background:#fff}
+.mfind:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(43,74,111,.12)}
+.movelist{display:flex;flex-direction:column;gap:5px;margin-top:12px}
+.mv-h{font-size:11.5px;letter-spacing:.06em;color:var(--mute);
+  margin:12px 0 2px;padding-left:2px}
+.mv-h:first-child{margin-top:0}
+.moverow{display:flex;align-items:center;gap:10px;width:100%;text-align:left;
+  border:1px solid var(--line);background:#fff;border-radius:9px;padding:11px 14px;
+  font:inherit;font-size:14px;cursor:pointer}
+.moverow:hover{border-color:var(--accent);background:#F4F7FB}
+.moverow .mv-n{flex:1}
+.moverow .mv-c{font-size:12px;color:var(--mute)}
 
 /* ── 아래쪽 저장 막대 ───────────────────────────────────────── */
 .save{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(244,244,242,.96);
@@ -138,6 +151,7 @@ section{margin-bottom:34px;scroll-margin-top:112px}
   <div class="hin">
     <h1>홈페이지 편집기</h1>
     <span class="sp"></span>
+    <button class="btn" id="undoBtn" title="Ctrl+Z" disabled>되돌리기</button>
     <button class="btn" id="folderBtn"><span class="dot" id="dot"></span>이미지 폴더 연결</button>
     <button class="btn" id="loadBtn">다른 data.js 불러오기</button>
     <input type="file" id="fileIn" accept=".js" hidden>
@@ -166,7 +180,7 @@ section{margin-bottom:34px;scroll-margin-top:112px}
 <div class="modal" id="modal">
   <div class="mbox">
     <div class="mhead">
-      <h3>사진 고르기</h3>
+      <h3 id="mTitle">사진 고르기</h3>
       <span class="sp"></span>
       <button class="btn mini" id="mFolder">폴더 연결</button>
       <button class="btn mini" id="mFile">파일에서 고르기</button>
@@ -197,10 +211,26 @@ section{margin-bottom:34px;scroll-margin-top:112px}
   }
   var D = null, changed = false, imgNames = [], urlMap = {};
 
+  /* ── 되돌리기 ─────────────────────────────────────────────────── */
+  var past = [];
+  function snap() {                       // 사진을 건드리기 직전 상태를 저장
+    try { past.push(JSON.stringify(D)); } catch (e) { return; }
+    if (past.length > 40) past.shift();
+    $('#undoBtn').disabled = false;
+  }
+  function undo() {
+    if (!past.length) { say('되돌릴 것이 없습니다.'); return; }
+    D = JSON.parse(past.pop());
+    build();
+    $('#undoBtn').disabled = !past.length;
+    changed = true;
+    say('되돌렸습니다.' + (past.length ? ' (' + past.length + '번 더 되돌릴 수 있습니다)' : ''), 'ok');
+  }
+
   function dirty() {
     changed = true;
     var s = $('#status'); s.className = 'warn';
-    s.textContent = '고친 내용이 있습니다 — 아래 «data.js 내려받기»를 눌러주세요';
+    s.textContent = '고친 내용이 있습니다 — 아래 «전체 복사» 또는 «data.js 내려받기»를 눌러주세요';
   }
   function say(t, cls) { var s = $('#status'); s.className = cls || ''; s.textContent = t; }
 
@@ -238,8 +268,13 @@ section{margin-bottom:34px;scroll-margin-top:112px}
   }
 
   /* ── 사진 타일 ────────────────────────────────────────────────── */
-  function strip(arr, onChange) {
+  /* 사진을 다른 구역으로 옮길 수 있도록, 모든 사진 줄을 여기에 모아둡니다 */
+  var STRIPS = [];
+
+  function strip(arr, onChange, label) {
     var box = el('div', 'strip');
+    var me = { label: label || '사진', arr: arr, redraw: function () { draw(); } };
+    STRIPS.push(me);
     function draw() {
       box.innerHTML = '';
       arr.forEach(function (src, i) {
@@ -260,11 +295,25 @@ section{margin-bottom:34px;scroll-margin-top:112px}
         t.appendChild(el('div', 'cap', src ? src.replace('images/', '') : '—'));
 
         var acts = el('div', 'acts');
-        var ch = el('button', '', '↻'); ch.title = '사진 바꾸기';
-        ch.onclick = function (e) { e.stopPropagation(); openPicker(function (v) { arr[i] = v; draw(); dirty(); }); };
-        var x = el('button', 'x', '×'); x.title = '빼기';
-        x.onclick = function (e) { e.stopPropagation(); arr.splice(i, 1); draw(); dirty(); };
-        acts.appendChild(ch); acts.appendChild(x);
+        var ch = el('button', '', '바꾸기'); ch.title = '다른 사진으로 바꾸기';
+        ch.onclick = function (e) {
+          e.stopPropagation();
+          openPicker(function (v) { snap(); arr[i] = v; draw(); dirty(); });
+        };
+        var mv = el('button', '', '옮기기'); mv.title = '다른 구역으로 옮기기';
+        mv.onclick = function (e) {
+          e.stopPropagation();
+          openMove(me, function (dest) {
+            snap();
+            dest.arr.push(arr[i]);
+            arr.splice(i, 1);
+            draw(); dest.redraw(); dirty();
+            say('«' + dest.label + '» 맨 뒤로 옮겼습니다.', 'ok');
+          });
+        };
+        var x = el('button', 'x', '빼기'); x.title = '이 사진 빼기';
+        x.onclick = function (e) { e.stopPropagation(); snap(); arr.splice(i, 1); draw(); dirty(); };
+        acts.appendChild(ch); acts.appendChild(mv); acts.appendChild(x);
         t.appendChild(acts);
 
         t.ondragstart = function (e) { e.dataTransfer.setData('text/plain', i); t.classList.add('drag'); };
@@ -274,11 +323,13 @@ section{margin-bottom:34px;scroll-margin-top:112px}
         t.ondrop = function (e) {
           e.preventDefault(); t.classList.remove('over');
           if (e.dataTransfer.files && e.dataTransfer.files.length) {   // 파일을 끌어다 놓은 경우
+            snap();
             takeFile(e.dataTransfer.files[0], function (v) { arr[i] = v; draw(); dirty(); });
             return;
           }
           var from = parseInt(e.dataTransfer.getData('text/plain'), 10);
           if (isNaN(from) || from === i) return;
+          snap();
           var moved = arr.splice(from, 1)[0];
           arr.splice(i, 0, moved);
           draw(); dirty();
@@ -286,14 +337,18 @@ section{margin-bottom:34px;scroll-margin-top:112px}
         box.appendChild(t);
       });
 
-      var add = el('button', 'addtile', '+<br>사진 추가');
-      add.onclick = function () { openPicker(function (v) { arr.push(v); draw(); dirty(); }); };
-      add.ondragover = function (e) { e.preventDefault(); add.style.borderColor = '#2B4A6F'; };
-      add.ondragleave = function () { add.style.borderColor = ''; };
+      var add = el('button', 'addtile', '＋<br>사진 추가<br><span style="font-size:11px">끌어다 놓아도 됩니다</span>');
+      add.onclick = function () { openPicker(function (v) { snap(); arr.push(v); draw(); dirty(); }); };
+      add.ondragover = function (e) { e.preventDefault(); add.classList.add('over'); };
+      add.ondragleave = function () { add.classList.remove('over'); };
       add.ondrop = function (e) {
-        e.preventDefault(); add.style.borderColor = '';
-        if (e.dataTransfer.files && e.dataTransfer.files.length)
-          takeFile(e.dataTransfer.files[0], function (v) { arr.push(v); draw(); dirty(); });
+        e.preventDefault(); add.classList.remove('over');
+        if (e.dataTransfer.files && e.dataTransfer.files.length) {
+          snap();
+          var fs = e.dataTransfer.files;
+          for (var k = 0; k < fs.length; k++)                 // 여러 장 한꺼번에
+            takeFile(fs[k], function (v) { arr.push(v); draw(); dirty(); });
+        }
       };
       box.appendChild(add);
       if (onChange) onChange();
@@ -337,7 +392,55 @@ section{margin-bottom:34px;scroll-margin-top:112px}
     }
     $('#modal').classList.add('on');
   }
-  function close() { $('#modal').classList.remove('on'); }
+  /* 사진을 다른 구역으로 옮기기 */
+  function openMove(from, cb) {
+    $('#mTitle').textContent = '어디로 옮길까요?';
+    $('#mFolder').style.display = $('#mFile').style.display = 'none';
+    var body = $('#mBody'); body.innerHTML = '';
+    body.appendChild(el('p', 'hint',
+      '고른 곳의 <b>맨 뒤</b>에 들어갑니다. 순서는 옮긴 뒤 끌어서 바꾸시면 됩니다.'));
+
+    var find = el('input', 'mfind');
+    find.type = 'search'; find.placeholder = '이름으로 찾기 (예: 협업, 기념품, Dispace)';
+    body.appendChild(find);
+
+    var list = el('div', 'movelist');
+    body.appendChild(list);
+
+    function draw(q) {
+      list.innerHTML = '';
+      q = (q || '').trim().toLowerCase();
+      var group = null;
+      STRIPS.forEach(function (s) {
+        if (s === from) return;
+        if (q && s.label.toLowerCase().indexOf(q) < 0) return;
+        var cut = s.label.indexOf(' — ');
+        var head = cut > 0 ? s.label.slice(0, cut) : '그 밖에';
+        var name = cut > 0 ? s.label.slice(cut + 3) : s.label;
+        if (head !== group) {
+          group = head;
+          list.appendChild(el('div', 'mv-h', head));
+        }
+        var b = el('button', 'moverow');
+        b.appendChild(el('span', 'mv-n', name));
+        b.appendChild(el('span', 'mv-c', s.arr.length + '장'));
+        b.onclick = function () { close(); cb(s); };
+        list.appendChild(b);
+      });
+      if (!list.children.length)
+        list.appendChild(el('p', 'hint', '찾는 이름이 없습니다.'));
+    }
+    draw('');
+    find.oninput = function () { draw(find.value); };
+    setTimeout(function () { find.focus(); }, 60);
+    $('#modal').classList.add('on');
+  }
+
+  function close() {
+    $('#modal').classList.remove('on');
+    $('#mTitle').textContent = '사진 고르기';
+    $('#mFolder').style.display = $('#mFile').style.display = '';
+  }
   $('#mClose').onclick = close;
   $('#modal').onclick = function (e) { if (e.target === $('#modal')) close(); };
   $('#mFile').onclick = function () { $('#oneFile').click(); };
@@ -386,12 +489,15 @@ section{margin-bottom:34px;scroll-margin-top:112px}
 
   function build() {
     var m = $('#main'); m.innerHTML = '';
+    STRIPS = [];
 
     m.appendChild(el('p', 'hint',
-      '<b>글자를 바로 누르면 고칠 수 있습니다.</b> 사진은 끌어서 순서를 바꾸고, ' +
-      '사진 위 <b>↻</b> 로 바꾸거나 <b>×</b> 로 뺍니다. 컴퓨터에 있는 사진을 타일 위로 ' +
-      '끌어다 놓아도 됩니다.<br>다 고치면 아래 «data.js 내려받기» 를 누르고, 받은 파일을 ' +
-      '저장소의 <code>data.js</code> 자리에 덮어쓰면 끝입니다.'));
+      '<b>글자는 그냥 눌러서 고치시면 됩니다.</b><br>' +
+      '사진 아래 <b>바꾸기 · 옮기기 · 빼기</b> 버튼이 있고, 사진을 끌면 순서가 바뀝니다. ' +
+      '컴퓨터에 있는 사진을 빈 칸으로 끌어다 놓으면 들어갑니다 (여러 장도 됩니다).<br>' +
+      '잘못 건드렸으면 위의 <b>되돌리기</b> 또는 <b>Ctrl+Z</b>.<br>' +
+      '다 고치면 아래 <b>«전체 복사»</b> → GitHub 의 <code>data.js</code> 에 붙여넣기. ' +
+      '(또는 «data.js 내려받기» 로 받아 덮어쓰기)'));
 
     /* 기본 */
     var s1 = sec('s-basic', '기본');
@@ -421,7 +527,7 @@ section{margin-bottom:34px;scroll-margin-top:112px}
     var left = el('div');
     left.appendChild(el('span', 'lb', '작가 사진'));
     var pa = { images: [D.about.portrait] };
-    var ps = strip(pa.images, function () { D.about.portrait = pa.images[0] || ''; });
+    var ps = strip(pa.images, function () { D.about.portrait = pa.images[0] || ''; }, '소개 — 작가 사진');
     left.appendChild(ps);
     ag.appendChild(left);
     var right = el('div');
@@ -483,7 +589,7 @@ section{margin-bottom:34px;scroll-margin-top:112px}
           c.appendChild(ct);
           var g2 = el('div', 'grid2');
           var L = el('div');
-          L.appendChild(strip(w.images));
+          L.appendChild(strip(w.images, null, ser.ko + ' — ' + (w.ko || w.title || '작품')));
           var R = el('div');
           R.appendChild(fld('제목 (영문)', w, 'title', 't-m'));
           R.appendChild(fld('제목 (국문)', w, 'ko', 't-s', '없으면 비워두세요'));
@@ -522,7 +628,8 @@ section{margin-bottom:34px;scroll-margin-top:112px}
           var g2 = el('div', 'grid2');
           var holder = { images: [v.image] };
           var L = el('div');
-          L.appendChild(strip(holder.images, function () { v.image = holder.images[0] || ''; }));
+          L.appendChild(strip(holder.images, function () { v.image = holder.images[0] || ''; },
+            ser.ko + ' — 전시 전경 ' + (vi + 1)));
           var R = el('div');
           R.appendChild(pair(v.caption, '캡션 (국문)', '캡션 (영문)', 't-s', true));
           g2.appendChild(L); g2.appendChild(R);
@@ -568,7 +675,8 @@ section{margin-bottom:34px;scroll-margin-top:112px}
             ct.appendChild(rowbtns(G.items, i, draw, '«' + (w.ko || w.title) + '»'));
             c.appendChild(ct);
             var g2 = el('div', 'grid2');
-            var L = el('div'); L.appendChild(strip(w.images));
+            var L = el('div');
+            L.appendChild(strip(w.images, null, title + ' — ' + (w.ko || w.title || '항목')));
             var R = el('div');
             R.appendChild(fld('제목 (영문)', w, 'title', 't-m'));
             R.appendChild(fld('제목 (국문)', w, 'ko', 't-s', '없으면 비워두세요'));
@@ -709,6 +817,15 @@ section{margin-bottom:34px;scroll-margin-top:112px}
       else say('복사하지 못했습니다. 브라우저 주소창을 누르고 Ctrl+V 로 확인해 보세요.', 'warn');
     }
   };
+
+  $('#undoBtn').onclick = undo;
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) {
+      var t = e.target;
+      if (t && t.classList && t.classList.contains('ed')) return;  // 글자 칸은 브라우저에 맡깁니다
+      e.preventDefault(); undo();
+    }
+  });
 
   $('#previewBtn').onclick = function () { window.open('index.html', '_blank'); };
 
